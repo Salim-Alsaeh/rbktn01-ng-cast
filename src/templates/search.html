@@ -1,6 +1,6 @@
-<div class="search-bar form-inline">
-  <input class="form-control" type="text" />
-  <button class="btn">
+<div ng-init="$ctrl.result($ctrl.search)" class="search-bar form-inline">
+  <input ng-model-options="{ debounce: 800 }" ng-enter="$ctrl.result($ctrl.search)" ng-model="$ctrl.params.query" class="form-control" type="text" />
+  <button ng-enter="$ctrl.result($ctrl.search)" ng-click="$ctrl.result($ctrl.search)" class="btn">
     <span class="glyphicon glyphicon-search"></span>
   </button>
 </div>

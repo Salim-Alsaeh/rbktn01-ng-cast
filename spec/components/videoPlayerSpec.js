@@ -40,6 +40,8 @@ describe('video player', function() {
 
   it('should dynamically display the video title', function() {
     // Testing both cat element and js video element
+    console.log(catElement.text());
+    
     expect(catElement.text()).to.contain(fakeVideoData[0].snippet.title);
     expect(jsElement.text()).to.contain(moreFakeVideoData[0].snippet.title);
   });
@@ -61,6 +63,8 @@ describe('video player', function() {
   });
 
   it('should not render a videoplayer if no video is provided', function() {
+    console.log(noVideoElement.find('iframe'));
+    
     expect(noVideoElement.find('iframe')).to.have.length.below(1);
     expect(noVideoElement.text()).to.contain('Please wait');
   });
